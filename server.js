@@ -13,8 +13,10 @@ let Todo = require('./todo.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://heroku_jxkkrmx4:g5a02dqspb2f2tla24j13d2n63@ds339968.mlab.com:39968/heroku_jxkkrmx4/todos', { useNewUrlParser: true });
-const connection = mongoose.connection;
+mongoose.connect('mongodb://heroku_jxkkrmx4:g5a02dqspb2f2tla24j13d2n63@ds339968.mlab.com:39968/heroku_jxkkrmx4/todos', { useNewUrlParser: true })
+    .catch(error => console.log(error));
+
+// const connection = mongoose.connection;
 
 // connection.once('open', function() {
 //     console.log("MongoDB database connection established successfully");
