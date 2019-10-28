@@ -14,9 +14,13 @@ app.use(bodyParser.json());
 mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
-connection.once('open', function() {
-    console.log("MongoDB database connection established successfully");
-})
+// connection.once('open', function() {
+//     console.log("MongoDB database connection established successfully");
+// })
+
+app.listen(process.env.PORT || 8080, function() {
+    console.log('Express server is up and running!');
+});
 
 todoRoutes.route('/').get(function(req, res) {
     Todo.find(function(err, todos) {
