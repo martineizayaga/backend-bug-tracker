@@ -1,3 +1,5 @@
+// https://medium.com/@s1akr/deploying-a-mern-mongo-express-react-node-stack-web-app-on-to-heroku-d6a7745f88ba
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -11,7 +13,7 @@ let Todo = require('./todo.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
+mongoose.connect('mongodb://heroku_jxkkrmx4:g5a02dqspb2f2tla24j13d2n63@ds339968.mlab.com:39968/heroku_jxkkrmx4/todos', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 // connection.once('open', function() {
